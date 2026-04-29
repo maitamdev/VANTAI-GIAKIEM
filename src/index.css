@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #f0fdf4;
+  --color-navy-100: #dcfce7;
+  --color-navy-200: #bbf7d0;
+  --color-navy-300: #86efac;
+  --color-navy-400: #4ade80;
+  --color-navy-500: #22c55e;
+  --color-navy-600: #16a34a;
+  --color-navy-700: #15803d;
+  --color-navy-800: #166534;
+  --color-navy-900: #043c14;
+  --color-navy-950: #022c0e;
+
+  --color-orange-50: #fefce8;
+  --color-orange-100: #fef9c3;
+  --color-orange-200: #f2dca0;
+  --color-orange-300: #fde047;
+  --color-orange-400: #facc15;
+  --color-orange-500: #dabb37;
+  --color-orange-600: #ca8a04;
+  --color-orange-700: #a16207;
+  --color-orange-800: #854d0e;
+  --color-orange-900: #713f12;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1a1a2e;
+  overflow-x: hidden;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(218, 187, 55, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(218, 187, 55, 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes truck-move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.7s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.7s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-count-up {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* ===== GLASSMORPHISM ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(4, 60, 20, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== GRADIENT UTILITIES ===== */
+.gradient-navy {
+  background: linear-gradient(135deg, #022c0e 0%, #166534 50%, #15803d 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #dabb37 0%, #facc15 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #022c0e 0%, #043c14 40%, #166534 70%, #15803d 100%);
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dabb37;
+}
+
+/* ===== FLOATING ZALO BUTTON ===== */
+.zalo-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  animation: pulse-glow 2s infinite;
+}
+
+/* ===== HOVER CARD EFFECT ===== */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(4, 60, 20, 0.15);
+}
+
+/* ===== STAGGER DELAYS ===== */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
