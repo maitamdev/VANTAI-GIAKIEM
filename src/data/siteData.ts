@@ -51,7 +51,7 @@ export const VEHICLES: Vehicle[] = [
     goods: 'Nông sản, Thanh long, Phân bón', 
     desc: 'Thiết kế thông thoáng, phù hợp vận chuyển nông sản tuyến đường ngắn và trung bình.', 
     icon: '🚛',
-    image: '/images/fleet-1.png'
+    image: '/images/fleet-2.png'
   },
   { 
     id: 2, 
@@ -61,7 +61,7 @@ export const VEHICLES: Vehicle[] = [
     goods: 'Hàng công nghiệp, Vật liệu xây dựng, Phân bón số lượng lớn', 
     desc: 'Chuyên dụng cho tuyến Bình Thuận - Long An, tải trọng cao, tiết kiệm chi phí.', 
     icon: '🚚',
-    image: '/images/fleet-2.png'
+    image: '/images/fleet-1.png'
   }
 ];
 
