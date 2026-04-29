@@ -19,13 +19,17 @@ export default function FleetPage() {
             <h2 className="text-3xl font-extrabold text-navy-800">Đội Xe Đa Dạng Tải Trọng</h2>
             <p className="text-navy-500 mt-3">Từ xe 500kg giao nội thành đến Container 40ft chạy Bắc Nam</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {VEHICLES.map((v) => (
               <div key={v.id} className="card-hover bg-white rounded-2xl border border-navy-100 overflow-hidden group">
-                <div className="bg-gradient-to-br from-navy-100 to-navy-200 h-44 flex items-center justify-center">
-                  <span className="text-6xl">{v.icon}</span>
+                <div className="bg-gradient-to-br from-navy-100 to-navy-200 h-56 flex items-center justify-center overflow-hidden">
+                  {v.image ? (
+                    <img src={v.image} alt={v.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <span className="text-6xl">{v.icon}</span>
+                  )}
                 </div>
-                <div className="p-5">
+                <div className="p-6">
                   <h3 className="font-bold text-navy-800 text-base mb-2 group-hover:text-orange-500 transition-colors">{v.name}</h3>
                   <div className="space-y-1.5 text-sm text-navy-500 mb-4">
                     <div>Tải trọng: <strong className="text-navy-700">{v.weight}</strong></div>

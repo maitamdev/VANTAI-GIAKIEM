@@ -39,17 +39,30 @@ export const ROUTES: Route[] = [
 ];
 
 export interface Vehicle {
-  id: number; name: string; weight: string; length: string; goods: string; desc: string; icon: string;
+  id: number; name: string; weight: string; length: string; goods: string; desc: string; icon: string; image?: string;
 }
 
 export const VEHICLES: Vehicle[] = [
-  { id: 1, name: 'Xe tải 500kg', weight: '500 kg', length: '2.1m', goods: 'Hàng nhẹ, chuyển nhà nhỏ', desc: 'Phù hợp giao hàng nội thành, chuyển đồ cá nhân.', icon: '🚐' },
-  { id: 2, name: 'Xe tải 1 tấn', weight: '1 tấn', length: '3.1m', goods: 'Hàng lẻ, đồ gia dụng', desc: 'Linh hoạt trong phố, phù hợp hàng nhỏ gọn.', icon: '🚚' },
-  { id: 3, name: 'Xe tải 2.5 tấn', weight: '2.5 tấn', length: '4.3m', goods: 'Hàng ghép, nội thất', desc: 'Chạy nội đô 24/7, phù hợp chuyển nhà và hàng lẻ.', icon: '🚛' },
-  { id: 4, name: 'Xe tải 5 tấn', weight: '5 tấn', length: '5.8m', goods: 'Hàng pallet, nguyên liệu', desc: 'Chuyên tuyến nội vùng và liên tỉnh gần.', icon: '🚛' },
-  { id: 5, name: 'Xe tải 8 tấn', weight: '8 tấn', length: '7.5m', goods: 'Hàng gia dụng, may mặc', desc: 'Tuyến liên tỉnh, thùng kín bảo vệ hàng hóa.', icon: '🚛' },
-  { id: 6, name: 'Xe tải 15 tấn', weight: '15 tấn', length: '9.4m', goods: 'Máy móc, vật liệu xây dựng', desc: 'Xe 3 chân chuyên tuyến Bắc Nam cho hàng nặng.', icon: '🚛' },
-  { id: 7, name: 'Xe container 40ft', weight: '30 tấn', length: '12.2m', goods: 'Hàng khối lượng lớn, xuất khẩu', desc: 'Chuyên tuyến Bắc Nam, hàng pallet, hàng đóng kiện.', icon: '🚢' },
+  { 
+    id: 1, 
+    name: 'Xe tải thùng mui bạt 8 Tấn', 
+    weight: '8 tấn', 
+    length: '7.5m', 
+    goods: 'Nông sản, Thanh long, Phân bón', 
+    desc: 'Thiết kế thông thoáng, phù hợp vận chuyển nông sản tuyến đường ngắn và trung bình.', 
+    icon: '🚛',
+    image: '/images/fleet-1.png'
+  },
+  { 
+    id: 2, 
+    name: 'Xe tải tải trọng lớn 15 Tấn', 
+    weight: '15 tấn', 
+    length: '9.5m', 
+    goods: 'Hàng công nghiệp, Vật liệu xây dựng, Phân bón số lượng lớn', 
+    desc: 'Chuyên dụng cho tuyến Bình Thuận - Long An, tải trọng cao, tiết kiệm chi phí.', 
+    icon: '🚚',
+    image: '/images/fleet-2.png'
+  }
 ];
 
 export interface Testimonial {
