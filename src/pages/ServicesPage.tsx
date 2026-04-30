@@ -45,9 +45,13 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <div className={`${isEven ? 'lg:order-1' : ''}`}>
-                  <div className="bg-gradient-to-br from-navy-100 to-navy-200 rounded-2xl h-72 md:h-80 flex items-center justify-center">
-                    <Icon size={80} className="text-navy-300" />
-                  </div>
+                  {service.image ? (
+                    <img src={service.image} alt={service.title} className="w-full h-72 md:h-80 object-cover rounded-2xl shadow-lg border border-navy-100" />
+                  ) : (
+                    <div className="bg-gradient-to-br from-navy-100 to-navy-200 rounded-2xl h-72 md:h-80 flex items-center justify-center border border-navy-100">
+                      <Icon size={80} className="text-navy-300" />
+                    </div>
+                  )}
                 </div>
               </div>
             );

@@ -17,16 +17,16 @@ export const STATS = [
 ];
 
 export interface Service {
-  id: number; title: string; slug: string; desc: string; icon: string; detail: string;
+  id: number; title: string; slug: string; desc: string; icon: string; detail: string; image?: string;
 }
 
 export const SERVICES: Service[] = [
-  { id: 1, title: 'Vận chuyển hàng lẻ, hàng ghép', slug: 'hang-le-hang-ghep', desc: 'Ghép hàng thông minh, tiết kiệm tối đa chi phí cho doanh nghiệp nhỏ và cá nhân.', icon: 'PackageSearch', detail: 'Dịch vụ vận chuyển hàng lẻ, hàng ghép giúp bạn tiết kiệm đến 60% chi phí so với thuê nguyên xe. Chúng tôi tối ưu tuyến đường, ghép hàng cùng chiều để đảm bảo hàng đi nhanh nhất.' },
-  { id: 2, title: 'Vận chuyển hàng nguyên chuyến', slug: 'hang-nguyen-chuyen', desc: 'Thuê trọn xe từ 1.5 tấn đến 30 tấn, chủ động thời gian và lộ trình.', icon: 'Truck', detail: 'Với đội xe hơn 500 chiếc đa dạng tải trọng, chúng tôi đáp ứng mọi nhu cầu vận chuyển nguyên chuyến. Bạn hoàn toàn chủ động về thời gian xuất phát và lộ trình di chuyển.' },
-  { id: 3, title: 'Vận chuyển máy móc thiết bị', slug: 'may-moc-thiet-bi', desc: 'Chuyên chở máy công trình, thiết bị y tế, máy sản xuất quá khổ quá tải.', icon: 'Settings', detail: 'Đội ngũ kỹ thuật viên có kinh nghiệm 10+ năm trong việc cố định, chằng buộc và vận chuyển an toàn các loại máy móc thiết bị nặng, quá khổ quá tải.' },
-  { id: 4, title: 'Vận chuyển hàng cồng kềnh', slug: 'hang-cong-kenh', desc: 'Xử lý nội thất, vật liệu xây dựng, hàng kích thước lớn chuyên nghiệp.', icon: 'Maximize', detail: 'Chúng tôi có xe thùng dài, xe tải mở bửng chuyên dụng cho hàng cồng kềnh. Đội ngũ bốc xếp được đào tạo bài bản đảm bảo hàng hóa không bị trầy xước.' },
-  { id: 5, title: 'Chuyển kho xưởng trọn gói', slug: 'chuyen-kho-xuong', desc: 'Dịch vụ trọn gói: bốc xếp, tháo dỡ, vận chuyển và lắp đặt tại điểm đến.', icon: 'Warehouse', detail: 'Giải pháp chuyển kho xưởng toàn diện bao gồm khảo sát, lên phương án, bốc xếp chuyên nghiệp, vận chuyển an toàn và lắp đặt tại vị trí mới theo yêu cầu.' },
-  { id: 6, title: 'Giao nhận tận nơi', slug: 'giao-nhan-tan-noi', desc: 'Nhận hàng tận kho, giao hàng tận cửa trên toàn quốc.', icon: 'MapPinCheck', detail: 'Dịch vụ door-to-door: Nhân viên đến tận kho lấy hàng, vận chuyển và giao tận nơi cho người nhận. Có xác nhận bằng hình ảnh khi giao hàng thành công.' },
+  { id: 1, title: 'Vận chuyển hàng lẻ, hàng ghép', slug: 'hang-le-hang-ghep', desc: 'Ghép hàng thông minh, tiết kiệm tối đa chi phí cho doanh nghiệp nhỏ và cá nhân.', icon: 'PackageSearch', detail: 'Dịch vụ vận chuyển hàng lẻ, hàng ghép giúp bạn tiết kiệm đến 60% chi phí so với thuê nguyên xe. Chúng tôi tối ưu tuyến đường, ghép hàng cùng chiều để đảm bảo hàng đi nhanh nhất.', image: '/images/service-1.jpg' },
+  { id: 2, title: 'Vận chuyển hàng nguyên chuyến', slug: 'hang-nguyen-chuyen', desc: 'Thuê trọn xe từ 1.5 tấn đến 30 tấn, chủ động thời gian và lộ trình.', icon: 'Truck', detail: 'Với đội xe hơn 500 chiếc đa dạng tải trọng, chúng tôi đáp ứng mọi nhu cầu vận chuyển nguyên chuyến. Bạn hoàn toàn chủ động về thời gian xuất phát và lộ trình di chuyển.', image: '/images/service-2.jpg' },
+  { id: 3, title: 'Vận chuyển máy móc thiết bị', slug: 'may-moc-thiet-bi', desc: 'Chuyên chở máy công trình, thiết bị y tế, máy sản xuất quá khổ quá tải.', icon: 'Settings', detail: 'Đội ngũ kỹ thuật viên có kinh nghiệm 10+ năm trong việc cố định, chằng buộc và vận chuyển an toàn các loại máy móc thiết bị nặng, quá khổ quá tải.', image: '/images/service-3.jpg' },
+  { id: 4, title: 'Vận chuyển hàng cồng kềnh', slug: 'hang-cong-kenh', desc: 'Xử lý nội thất, vật liệu xây dựng, hàng kích thước lớn chuyên nghiệp.', icon: 'Maximize', detail: 'Chúng tôi có xe thùng dài, xe tải mở bửng chuyên dụng cho hàng cồng kềnh. Đội ngũ bốc xếp được đào tạo bài bản đảm bảo hàng hóa không bị trầy xước.', image: '/images/service-4.jpg' },
+  { id: 5, title: 'Chuyển kho xưởng trọn gói', slug: 'chuyen-kho-xuong', desc: 'Dịch vụ trọn gói: bốc xếp, tháo dỡ, vận chuyển và lắp đặt tại điểm đến.', icon: 'Warehouse', detail: 'Giải pháp chuyển kho xưởng toàn diện bao gồm khảo sát, lên phương án, bốc xếp chuyên nghiệp, vận chuyển an toàn và lắp đặt tại vị trí mới theo yêu cầu.', image: '/images/service-5.jpg' },
+  { id: 6, title: 'Giao nhận tận nơi', slug: 'giao-nhan-tan-noi', desc: 'Nhận hàng tận kho, giao hàng tận cửa trên toàn quốc.', icon: 'MapPinCheck', detail: 'Dịch vụ door-to-door: Nhân viên đến tận kho lấy hàng, vận chuyển và giao tận nơi cho người nhận. Có xác nhận bằng hình ảnh khi giao hàng thành công.', image: '/images/service-6.jpg' },
 ];
 
 export interface Route {
