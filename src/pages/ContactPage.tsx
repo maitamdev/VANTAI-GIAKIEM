@@ -1,8 +1,40 @@
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { SITE } from '../data/siteData';
 import SEO from '../components/SEO';
 
 export default function ContactPage() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xykogoaq", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+        // Reset message after 5 seconds
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <>
       <SEO 
@@ -74,40 +106,60 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-extrabold text-navy-800 mb-2">Gửi Yêu Cầu Tư Vấn</h2>
                 <p className="text-navy-500 text-sm mb-8">Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.</p>
 
-                <form className="space-y-5" action="https://formspree.io/f/xykogoaq" method="POST">
-                  {/* Form đã được kết nối với Formspree */}
-                  <div className="grid md:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Họ và tên *</label>
-                      <input type="text" name="name" required placeholder="Nguyễn Văn A" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                {formStatus === 'success' ? (
+                  <div className="bg-green-50 border border-green-200 text-green-700 p-6 rounded-xl flex flex-col items-center justify-center text-center animate-fade-in-up">
+                    <CheckCircle2 size={48} className="text-green-500 mb-3" />
+                    <h3 className="text-lg font-bold">Gửi yêu cầu thành công!</h3>
+                    <p className="text-sm mt-1">Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+                  </div>
+                ) : (
+                  <form className="space-y-5" onSubmit={handleSubmit}>
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div>
+                        <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Họ và tên *</label>
+                        <input type="text" name="name" required placeholder="Nguyễn Văn A" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                      </div>
+                      <div>
+                        <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Số điện thoại *</label>
+                        <input type="tel" name="phone" required placeholder="0335 xxx xxx" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                      </div>
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Số điện thoại *</label>
-                      <input type="tel" name="phone" required placeholder="0335 xxx xxx" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                      <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Email</label>
+                      <input type="email" name="email" placeholder="email@company.com" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Email</label>
-                    <input type="email" name="email" placeholder="email@company.com" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Chủ đề</label>
-                    <select name="subject" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 text-navy-700">
-                      <option value="Yêu cầu báo giá">Yêu cầu báo giá</option>
-                      <option value="Tư vấn dịch vụ">Tư vấn dịch vụ</option>
-                      <option value="Khiếu nại / Phản hồi">Khiếu nại / Phản hồi</option>
-                      <option value="Hợp tác kinh doanh">Hợp tác kinh doanh</option>
-                      <option value="Khác">Khác</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Nội dung *</label>
-                    <textarea name="message" required rows={5} placeholder="Mô tả chi tiết yêu cầu của bạn..." className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 resize-none" />
-                  </div>
-                  <button type="submit" className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold text-base hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2">
-                    <Send size={18} /> Gửi yêu cầu
-                  </button>
-                </form>
+                    <div>
+                      <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Chủ đề</label>
+                      <select name="subject" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 text-navy-700">
+                        <option value="Yêu cầu báo giá">Yêu cầu báo giá</option>
+                        <option value="Tư vấn dịch vụ">Tư vấn dịch vụ</option>
+                        <option value="Khiếu nại / Phản hồi">Khiếu nại / Phản hồi</option>
+                        <option value="Hợp tác kinh doanh">Hợp tác kinh doanh</option>
+                        <option value="Khác">Khác</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Nội dung *</label>
+                      <textarea name="message" required rows={5} placeholder="Mô tả chi tiết yêu cầu của bạn..." className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 resize-none" />
+                    </div>
+                    
+                    {formStatus === 'error' && (
+                      <p className="text-red-500 text-sm font-semibold">Có lỗi xảy ra khi gửi. Vui lòng thử lại sau!</p>
+                    )}
+                    
+                    <button 
+                      type="submit" 
+                      disabled={formStatus === 'submitting'}
+                      className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold text-base hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {formStatus === 'submitting' ? (
+                        <>Đang gửi...</>
+                      ) : (
+                        <><Send size={18} /> Gửi yêu cầu</>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
