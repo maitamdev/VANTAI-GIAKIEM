@@ -1,9 +1,14 @@
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { SITE } from '../data/siteData';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
   return (
     <>
+      <SEO 
+        title="Liên Hệ" 
+        description="Liên hệ Cánh Đồng Xanh Logistics để nhận tư vấn và báo giá vận chuyển hàng hóa Bắc Nam nhanh nhất."
+      />
       <section className="gradient-hero py-20 md:py-28 text-center text-white relative overflow-hidden">
         <div className="absolute inset-0"><div className="absolute bottom-10 left-10 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" /></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10">
@@ -50,11 +55,16 @@ export default function ContactPage() {
 
               {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-navy-100 h-52 bg-navy-100 flex items-center justify-center">
-                <div className="text-center text-navy-400">
-                  <MapPin size={32} className="mx-auto mb-2" />
-                  <p className="text-sm">Google Maps</p>
-                  <p className="text-xs mt-1">{SITE.address}</p>
-                </div>
+                <iframe
+                  title="Google Maps"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.649363063541!2d107.18228389999999!3d10.9511394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317511c97a296e8d%3A0x6a0c5c317f22af50!2sGia%20Ki%E1%BB%87m%2C%20Th%E1%BB%91ng%20Nh%E1%BA%A5t%2C%20Dong%20Nai%2C%20Vietnam!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 
@@ -64,34 +74,35 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-extrabold text-navy-800 mb-2">Gửi Yêu Cầu Tư Vấn</h2>
                 <p className="text-navy-500 text-sm mb-8">Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.</p>
 
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-5" action="https://formspree.io/f/xykogoaq" method="POST">
+                  {/* Form đã được kết nối với Formspree */}
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Họ và tên *</label>
-                      <input type="text" placeholder="Nguyễn Văn A" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                      <input type="text" name="name" required placeholder="Nguyễn Văn A" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
                     </div>
                     <div>
                       <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Số điện thoại *</label>
-                      <input type="tel" placeholder="0335 xxx xxx" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                      <input type="tel" name="phone" required placeholder="0335 xxx xxx" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
                     </div>
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Email</label>
-                    <input type="email" placeholder="email@company.com" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
+                    <input type="email" name="email" placeholder="email@company.com" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50" />
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Chủ đề</label>
-                    <select className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 text-navy-700">
-                      <option>Yêu cầu báo giá</option>
-                      <option>Tư vấn dịch vụ</option>
-                      <option>Khiếu nại / Phản hồi</option>
-                      <option>Hợp tác kinh doanh</option>
-                      <option>Khác</option>
+                    <select name="subject" className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 text-navy-700">
+                      <option value="Yêu cầu báo giá">Yêu cầu báo giá</option>
+                      <option value="Tư vấn dịch vụ">Tư vấn dịch vụ</option>
+                      <option value="Khiếu nại / Phản hồi">Khiếu nại / Phản hồi</option>
+                      <option value="Hợp tác kinh doanh">Hợp tác kinh doanh</option>
+                      <option value="Khác">Khác</option>
                     </select>
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-navy-700 mb-1.5 block">Nội dung *</label>
-                    <textarea rows={5} placeholder="Mô tả chi tiết yêu cầu của bạn..." className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 resize-none" />
+                    <textarea name="message" required rows={5} placeholder="Mô tả chi tiết yêu cầu của bạn..." className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-navy-50/50 resize-none" />
                   </div>
                   <button type="submit" className="w-full py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold text-base hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2">
                     <Send size={18} /> Gửi yêu cầu

@@ -6,6 +6,7 @@ import {
   ArrowRight, Star, ChevronLeft, ChevronRight, Send
 } from 'lucide-react';
 import { SITE, STATS, SERVICES, ROUTES, COMMITMENTS, TESTIMONIALS, BLOG_POSTS } from '../data/siteData';
+import SEO from '../components/SEO';
 
 const ICON_MAP: Record<string, React.ElementType> = {
   PackageSearch, Truck, Settings, Maximize, Warehouse, MapPinCheck,
@@ -51,6 +52,10 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO 
+        title="Trang Chủ" 
+        description="Cánh Đồng Xanh Logistics cung cấp dịch vụ vận tải, giao nhận hàng hóa toàn quốc với hơn 500 đầu xe, cam kết uy tín và an toàn tuyệt đối."
+      />
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-[90vh] flex items-center bg-navy-900 overflow-hidden">
         {/* Background Image */}
