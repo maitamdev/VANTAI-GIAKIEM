@@ -12,6 +12,10 @@ export default function ContactPage() {
     
     const form = e.currentTarget;
     const data = new FormData(form);
+    
+    // Đổi tiêu đề Email thành Tiếng Việt
+    const subjectContent = data.get('subject') || 'Liên hệ mới';
+    data.append('_subject', `🚨 Cánh Đồng Xanh: Có khách hàng gửi yêu cầu [${subjectContent}]`);
 
     try {
       const response = await fetch("https://formspree.io/f/xykogoaq", {
