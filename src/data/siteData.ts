@@ -36,6 +36,10 @@ export interface Route {
 export const ROUTES: Route[] = [
   { id: 1, from: 'Bình Thuận', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), thiết bị, hàng tiêu dùng', hot: true },
   { id: 2, from: 'Long An', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng công nghiệp, phân bón, nông sản', hot: true },
+  { id: 3, from: 'TP.HCM', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, vật liệu, máy móc', hot: true },
+  { id: 4, from: 'Long An', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản, hàng công nghiệp', hot: true },
+  { id: 5, from: 'Bình Thuận', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), hải sản', hot: true },
+  { id: 6, from: 'TP.HCM', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, máy móc, vật liệu xây dựng', hot: true },
 ];
 
 export interface Vehicle {

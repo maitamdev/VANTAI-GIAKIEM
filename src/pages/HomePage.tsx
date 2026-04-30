@@ -114,8 +114,8 @@ export default function HomePage() {
                     <label className="text-sm font-semibold text-navy-700 mb-1 block">Điểm gửi hàng</label>
                     <select className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-navy-50/50 text-navy-700">
                       <option>TP. Hồ Chí Minh</option>
-                      <option>Hà Nội</option>
-                      <option>Đà Nẵng</option>
+                      <option>Long An</option>
+                      <option>Bình Thuận</option>
                       <option>Cần Thơ</option>
                       <option>Khác</option>
                     </select>
@@ -123,9 +123,9 @@ export default function HomePage() {
                   <div>
                     <label className="text-sm font-semibold text-navy-700 mb-1 block">Điểm nhận hàng</label>
                     <select className="w-full px-4 py-3 border border-navy-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-navy-50/50 text-navy-700">
-                      <option>Hà Nội</option>
+                      <option>Long An</option>
                       <option>TP. Hồ Chí Minh</option>
-                      <option>Đà Nẵng</option>
+                      <option>Bình Thuận</option>
                       <option>Nha Trang</option>
                       <option>Đắk Lắk</option>
                       <option>Cần Thơ</option>

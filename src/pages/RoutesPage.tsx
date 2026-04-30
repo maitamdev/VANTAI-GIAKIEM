@@ -21,7 +21,7 @@ export default function RoutesPage() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Filter */}
           <div className="flex flex-wrap gap-3 mb-10 justify-center">
-            {['all', 'TP.HCM', 'Hà Nội', 'Đà Nẵng'].map((f) => (
+            {['all', 'TP.HCM', 'Long An', 'Bình Thuận'].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
