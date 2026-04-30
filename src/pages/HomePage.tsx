@@ -57,14 +57,14 @@ export default function HomePage() {
         description="Cánh Đồng Xanh Logistics cung cấp dịch vụ vận tải, giao nhận hàng hóa toàn quốc với hơn 500 đầu xe, cam kết uy tín và an toàn tuyệt đối."
       />
       {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-[90vh] flex items-center bg-navy-900 overflow-hidden">
+      <section className="relative min-h-[95vh] flex items-center bg-navy-900 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{ backgroundImage: 'url("/images/logo.png")' }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
         />
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/80 to-transparent" />
+        {/* Overlay: dark left for text, transparent right to show truck */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/50 to-navy-900/20" />
 
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-20 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
