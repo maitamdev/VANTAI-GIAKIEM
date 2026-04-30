@@ -252,30 +252,40 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {ROUTES.slice(0, 8).map((route) => (
-              <div key={route.id} className="card-hover bg-white rounded-2xl p-6 border border-navy-100 relative overflow-hidden group">
+              <div key={route.id} className="card-hover bg-white rounded-2xl border border-navy-100 relative overflow-hidden group flex flex-col">
                 {route.hot && (
-                  <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">HOT</span>
+                  <span className="absolute top-3 right-3 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-20">HOT</span>
                 )}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl">🚛</span>
-                  <div>
-                    <div className="font-bold text-navy-800 text-sm">{route.from}</div>
-                    <div className="text-orange-500 text-xs font-bold">→ {route.to}</div>
+                {route.image && (
+                  <div className="h-32 overflow-hidden relative">
+                    <img src={route.image} alt={`${route.from} - ${route.to}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors" />
+                  </div>
+                )}
+                <div className="p-5 flex-1 flex flex-col">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🚛</span>
+                    <div>
+                      <div className="font-bold text-navy-800 text-sm">{route.from}</div>
+                      <div className="text-orange-500 text-xs font-bold">→ {route.to}</div>
+                    </div>
+                  </div>
+                  <div className="space-y-2 text-sm text-navy-500">
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} className="text-orange-400" />
+                      <span>{route.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Truck size={14} className="text-orange-400" />
+                      <span>{route.freq}</span>
+                    </div>
+                  </div>
+                  <div className="mt-auto pt-4">
+                    <Link to="/tuyen-van-chuyen" className="inline-flex items-center gap-1 text-xs font-semibold text-orange-500 hover:gap-2 transition-all">
+                      Chi tiết <ArrowRight size={14} />
+                    </Link>
                   </div>
                 </div>
-                <div className="space-y-2 text-sm text-navy-500">
-                  <div className="flex items-center gap-2">
-                    <Clock size={14} className="text-orange-400" />
-                    <span>{route.time}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Truck size={14} className="text-orange-400" />
-                    <span>{route.freq}</span>
-                  </div>
-                </div>
-                <Link to="/tuyen-van-chuyen" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-orange-500 hover:gap-2 transition-all">
-                  Chi tiết <ArrowRight size={14} />
-                </Link>
               </div>
             ))}
           </div>

@@ -26,20 +26,20 @@ export const SERVICES: Service[] = [
   { id: 3, title: 'Vận chuyển máy móc thiết bị', slug: 'may-moc-thiet-bi', desc: 'Chuyên chở máy công trình, thiết bị y tế, máy sản xuất quá khổ quá tải.', icon: 'Settings', detail: 'Đội ngũ kỹ thuật viên có kinh nghiệm 10+ năm trong việc cố định, chằng buộc và vận chuyển an toàn các loại máy móc thiết bị nặng, quá khổ quá tải.', image: '/images/service-3.jpg' },
   { id: 4, title: 'Vận chuyển hàng cồng kềnh', slug: 'hang-cong-kenh', desc: 'Xử lý nội thất, vật liệu xây dựng, hàng kích thước lớn chuyên nghiệp.', icon: 'Maximize', detail: 'Chúng tôi có xe thùng dài, xe tải mở bửng chuyên dụng cho hàng cồng kềnh. Đội ngũ bốc xếp được đào tạo bài bản đảm bảo hàng hóa không bị trầy xước.', image: '/images/service-4.jpg' },
   { id: 5, title: 'Chuyển kho xưởng trọn gói', slug: 'chuyen-kho-xuong', desc: 'Dịch vụ trọn gói: bốc xếp, tháo dỡ, vận chuyển và lắp đặt tại điểm đến.', icon: 'Warehouse', detail: 'Giải pháp chuyển kho xưởng toàn diện bao gồm khảo sát, lên phương án, bốc xếp chuyên nghiệp, vận chuyển an toàn và lắp đặt tại vị trí mới theo yêu cầu.', image: '/images/service-5.jpg' },
-  { id: 6, title: 'Giao nhận tận nơi', slug: 'giao-nhan-tan-noi', desc: 'Nhận hàng tận kho, giao hàng tận cửa trên toàn quốc.', icon: 'MapPinCheck', detail: 'Dịch vụ door-to-door: Nhân viên đến tận kho lấy hàng, vận chuyển và giao tận nơi cho người nhận. Có xác nhận bằng hình ảnh khi giao hàng thành công.', image: '/images/service-6.jpg' },
+  { id: 6, title: 'Giao nhận tận nơi', slug: 'giao-nhan-tan-noi', desc: 'Nhận hàng tận kho, giao hàng tận cửa trên toàn quốc.', icon: 'MapPinCheck', detail: 'Dịch vụ door-to-door: Nhân viên đến tận kho lấy hàng, vận chuyển và giao tận nơi cho người nhận. Có xác nhận bằng hình ảnh khi giao hàng thành công.', image: '/images/service-1.jpg' },
 ];
 
 export interface Route {
-  id: number; from: string; to: string; time: string; freq: string; goods: string; hot?: boolean;
+  id: number; from: string; to: string; time: string; freq: string; goods: string; hot?: boolean; image?: string;
 }
 
 export const ROUTES: Route[] = [
-  { id: 1, from: 'Bình Thuận', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), thiết bị, hàng tiêu dùng', hot: true },
-  { id: 2, from: 'Long An', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng công nghiệp, phân bón, nông sản', hot: true },
-  { id: 3, from: 'TP.HCM', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, vật liệu, máy móc', hot: true },
-  { id: 4, from: 'Long An', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản, hàng công nghiệp', hot: true },
-  { id: 5, from: 'Bình Thuận', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), hải sản', hot: true },
-  { id: 6, from: 'TP.HCM', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, máy móc, vật liệu xây dựng', hot: true },
+  { id: 1, from: 'Bình Thuận', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), thiết bị, hàng tiêu dùng', hot: true, image: '/images/service-gen-1.png' },
+  { id: 2, from: 'Long An', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng công nghiệp, phân bón, nông sản', hot: true, image: '/images/service-gen-2.png' },
+  { id: 3, from: 'TP.HCM', to: 'Long An', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, vật liệu, máy móc', hot: true, image: '/images/service-gen-3.png' },
+  { id: 4, from: 'Long An', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản, hàng công nghiệp', hot: true, image: '/images/service-gen-4.png' },
+  { id: 5, from: 'Bình Thuận', to: 'TP.HCM', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Nông sản (Thanh long), hải sản', hot: true, image: '/images/service-gen-5.png' },
+  { id: 6, from: 'TP.HCM', to: 'Bình Thuận', time: 'Trong ngày', freq: 'Chạy liên tục', goods: 'Hàng tiêu dùng, máy móc, vật liệu xây dựng', hot: true, image: '/images/service-gen-6.png' },
 ];
 
 export interface Vehicle {

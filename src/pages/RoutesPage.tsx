@@ -36,23 +36,40 @@ export default function RoutesPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((route) => (
-              <div key={route.id} className="card-hover bg-white rounded-2xl border border-navy-100 overflow-hidden group">
-                <div className="bg-gradient-to-r from-navy-700 to-navy-800 p-5 text-white">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <MapPin size={20} className="text-orange-400" />
-                      <span className="font-bold">{route.from}</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-orange-400">
-                      <span className="text-lg">→</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-bold">{route.to}</span>
-                      <MapPin size={20} className="text-orange-400" />
+              <div key={route.id} className="card-hover bg-white rounded-2xl border border-navy-100 overflow-hidden group flex flex-col">
+                {route.image ? (
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={route.image} alt={`${route.from} - ${route.to}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
+                    <div className="absolute bottom-4 left-5 right-5 text-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold">{route.from}</span>
+                          <span className="text-orange-400">→</span>
+                          <span className="font-bold">{route.to}</span>
+                        </div>
+                      </div>
+                      {route.hot && <span className="inline-block mt-1 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">🔥 Tuyến hot</span>}
                     </div>
                   </div>
-                  {route.hot && <span className="inline-block mt-2 bg-red-500 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">🔥 Tuyến hot</span>}
-                </div>
+                ) : (
+                  <div className="bg-gradient-to-r from-navy-700 to-navy-800 p-5 text-white">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <MapPin size={20} className="text-orange-400" />
+                        <span className="font-bold">{route.from}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-orange-400">
+                        <span className="text-lg">→</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold">{route.to}</span>
+                        <MapPin size={20} className="text-orange-400" />
+                      </div>
+                    </div>
+                    {route.hot && <span className="inline-block mt-2 bg-red-500 text-white text-xs font-bold px-2.5 py-0.5 rounded-full">🔥 Tuyến hot</span>}
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="space-y-3 mb-5">
                     <div className="flex items-center gap-3 text-navy-600">
