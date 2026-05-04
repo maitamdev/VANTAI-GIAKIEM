@@ -163,26 +163,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== STATS SECTION ===== */}
-      <section className="py-16 bg-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,70,155,0.03),transparent_70%)]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {STATS.map((stat) => {
-              const Icon = ICON_MAP[stat.icon] || Award;
-              return (
-                <div key={stat.label} className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-navy-50 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
-                    <Icon size={28} className="text-navy-600 group-hover:text-orange-500 transition-colors" />
-                  </div>
-                  <CountUp end={stat.value} suffix={stat.suffix} />
-                  <p className="text-navy-500 font-medium mt-1">{stat.label}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* ===== SERVICES SECTION ===== */}
       <section className="py-20 bg-navy-50/50">
@@ -250,8 +230,8 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-navy-800 mt-3">Tuyến Đường Trọng Điểm</h2>
             <p className="text-navy-500 mt-3">Phủ sóng toàn quốc với lịch xe chạy hàng ngày</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {ROUTES.slice(0, 8).map((route) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {ROUTES.slice(0, 6).map((route) => (
               <div key={route.id} className="card-hover bg-white rounded-2xl border border-navy-100 relative overflow-hidden group flex flex-col">
                 {route.hot && (
                   <span className="absolute top-3 right-3 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-20">HOT</span>

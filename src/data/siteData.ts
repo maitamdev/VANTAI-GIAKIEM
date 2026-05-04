@@ -74,11 +74,11 @@ export interface Testimonial {
 }
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: 1, name: 'Anh Nguyễn Văn Minh', type: 'Giám đốc công ty TNHH Minh Phát', content: 'Chúng tôi đã sử dụng dịch vụ của Cánh Đồng Xanh Logistics hơn 3 năm. Hàng hóa luôn được giao đúng hẹn, đội ngũ nhân viên rất chuyên nghiệp và nhiệt tình.', route: 'TP.HCM – Hà Nội', rating: 5 },
-  { id: 2, name: 'Chị Trần Thị Lan', type: 'Chủ cửa hàng nội thất', content: 'Mình gửi bàn ghế, tủ kệ đi Đà Nẵng thường xuyên. Hàng cồng kềnh nhưng bên Cánh Đồng Xanh Logistics đóng gói rất cẩn thận, chưa bao giờ bị trầy xước.', route: 'TP.HCM – Đà Nẵng', rating: 5 },
-  { id: 3, name: 'Anh Lê Hoàng Dũng', type: 'Quản lý kho vận', content: 'Giá cước hợp lý, lịch xe chạy đều đặn mỗi ngày. Đặc biệt dịch vụ giao nhận tận nơi rất tiện lợi cho doanh nghiệp của chúng tôi.', route: 'Hà Nội – TP.HCM', rating: 5 },
-  { id: 4, name: 'Chị Phạm Thúy Hằng', type: 'Chủ xưởng may', content: 'Dịch vụ chuyển kho xưởng rất chuyên nghiệp. Đội ngũ bốc xếp đến đúng giờ, tháo lắp máy móc cẩn thận. Rất hài lòng!', route: 'TP.HCM – Bình Dương', rating: 4 },
-  { id: 5, name: 'Anh Võ Thanh Tùng', type: 'Đại lý phân phối', content: 'Tuyến đi Tây Nguyên khó tìm đơn vị vận chuyển uy tín, nhưng Cánh Đồng Xanh Logistics làm rất tốt. Hàng đến đúng hẹn, an toàn.', route: 'TP.HCM – Đắk Lắk', rating: 5 },
+  { id: 1, name: 'Anh Nguyễn Văn Minh', type: 'Giám đốc công ty TNHH Minh Phát', content: 'Chúng tôi đã sử dụng dịch vụ của Cánh Đồng Xanh Logistics hơn 3 năm. Hàng hóa luôn được giao đúng hẹn, đội ngũ nhân viên rất chuyên nghiệp và nhiệt tình.', route: 'Bình Thuận – Long An', rating: 5 },
+  { id: 2, name: 'Chị Trần Thị Lan', type: 'Chủ cửa hàng nội thất', content: 'Mình gửi bàn ghế, tủ kệ từ TP.HCM đi Long An thường xuyên. Hàng cồng kềnh nhưng bên Cánh Đồng Xanh Logistics đóng gói rất cẩn thận, chưa bao giờ bị trầy xước.', route: 'TP.HCM – Long An', rating: 5 },
+  { id: 3, name: 'Anh Lê Hoàng Dũng', type: 'Quản lý kho vận', content: 'Giá cước hợp lý, lịch xe chạy đều đặn mỗi ngày. Đặc biệt dịch vụ giao nhận tận nơi rất tiện lợi cho doanh nghiệp của chúng tôi.', route: 'Long An – Bình Thuận', rating: 5 },
+  { id: 4, name: 'Chị Phạm Thúy Hằng', type: 'Chủ xưởng may', content: 'Dịch vụ chuyển kho xưởng rất chuyên nghiệp. Đội ngũ bốc xếp đến đúng giờ, tháo lắp máy móc cẩn thận. Rất hài lòng!', route: 'TP.HCM – Bình Thuận', rating: 5 },
+  { id: 5, name: 'Anh Võ Thanh Tùng', type: 'Đại lý phân phối nông sản', content: 'Chuyên chở thanh long từ Bình Thuận về TP.HCM rất nhanh, hàng luôn tươi ngon khi đến nơi. Cánh Đồng Xanh Logistics làm rất tốt!', route: 'Bình Thuận – TP.HCM', rating: 5 },
 ];
 
 export interface BlogPost {
@@ -91,19 +91,19 @@ export const BLOG_POSTS: BlogPost[] = [
   { id: 3, title: 'Bảng giá vận chuyển hàng hóa Bắc Nam mới nhất 2024', slug: 'bang-gia-van-chuyen-bac-nam-2024', category: 'Bảng giá', desc: 'Cập nhật giá cước vận chuyển mới nhất cho tuyến Bắc – Trung – Nam.', date: '05/04/2024', summary: 'Tổng hợp bảng giá chi tiết theo kg, theo khối và theo xe nguyên chuyến cho tất cả tuyến đường từ TP.HCM đi các tỉnh miền Bắc, miền Trung.' },
   { id: 4, title: 'Quy trình chuyển kho xưởng không gián đoạn sản xuất', slug: 'quy-trinh-chuyen-kho-xuong', category: 'Cẩm nang', desc: 'Kinh nghiệm di dời nhà xưởng mà không ảnh hưởng đến hoạt động kinh doanh.', date: '28/03/2024', summary: 'Lên kế hoạch chi tiết, phân chia giai đoạn di dời và bố trí nhân lực hợp lý giúp quá trình chuyển kho diễn ra suôn sẻ trong thời gian ngắn nhất.' },
   { id: 5, title: 'Vận chuyển máy móc thiết bị nặng cần lưu ý gì?', slug: 'van-chuyen-may-moc-nang', category: 'Kiến thức', desc: 'Những lưu ý quan trọng khi vận chuyển thiết bị công nghiệp nặng.', date: '20/03/2024', summary: 'Từ việc khảo sát đường đi, chọn phương tiện phù hợp đến kỹ thuật chằng buộc chuyên dụng – tất cả đều ảnh hưởng đến sự an toàn của hàng hóa.' },
-  { id: 6, title: 'Cánh Đồng Xanh Logistics khai trương kho mới tại Đà Nẵng', slug: 'khai-truong-kho-da-nang', category: 'Tin công ty', desc: 'Mở rộng mạng lưới kho bãi tại miền Trung, phục vụ khách hàng tốt hơn.', date: '15/03/2024', summary: 'Kho mới tại Đà Nẵng với diện tích 2.000m², trang bị hệ thống camera giám sát 24/7 và xe nâng hiện đại, nâng cao năng lực phục vụ khu vực miền Trung.' },
+  { id: 6, title: 'Cánh Đồng Xanh Logistics mở rộng tuyến Bình Thuận – Long An', slug: 'mo-rong-tuyen-binh-thuan-long-an', category: 'Tin công ty', desc: 'Tăng cường năng lực vận chuyển tuyến trọng điểm Bình Thuận – Long An.', date: '15/03/2024', summary: 'Tuyến Bình Thuận – Long An được tăng cường thêm 10 đầu xe, phục vụ nhu cầu vận chuyển nông sản, phân bón ngày càng tăng trong khu vực.' },
 ];
 
 export interface FAQ { id: number; q: string; a: string; }
 
 export const FAQS: FAQ[] = [
-  { id: 1, q: 'Gửi hàng lẻ từ TP.HCM ra Hà Nội mất bao lâu?', a: 'Thời gian vận chuyển hàng lẻ từ TP.HCM ra Hà Nội trung bình từ 3-4 ngày làm việc, tùy thuộc vào loại hàng và khối lượng.' },
+  { id: 1, q: 'Gửi hàng lẻ từ Bình Thuận đi Long An mất bao lâu?', a: 'Thời gian vận chuyển hàng lẻ từ Bình Thuận đi Long An chỉ trong ngày, xe chạy liên tục đảm bảo hàng đến nhanh nhất.' },
   { id: 2, q: 'Hàng hóa có được bảo hiểm không?', a: 'Có. Tất cả hàng hóa đều được bảo hiểm theo giá trị khai báo. Chúng tôi cam kết bồi thường 100% nếu hàng bị hư hỏng hoặc thất lạc do lỗi vận chuyển.' },
   { id: 3, q: 'Công ty có hỗ trợ bốc xếp hàng hóa không?', a: 'Có. Chúng tôi có đội ngũ bốc xếp chuyên nghiệp tại tất cả các kho chính. Với hàng máy móc nặng, chúng tôi sử dụng xe nâng và thiết bị chuyên dụng.' },
   { id: 4, q: 'Giá cước vận chuyển tính theo kg hay theo khối?', a: 'Giá cước được tính theo cách nào có lợi nhất cho khách hàng. Hàng nặng tính theo kg, hàng cồng kềnh nhẹ tính theo khối (CBM). Liên hệ hotline để được báo giá chính xác.' },
   { id: 5, q: 'Tôi có thể theo dõi đơn hàng bằng cách nào?', a: 'Bạn có thể gọi hotline 0335 155 431 hoặc nhắn Zalo cung cấp mã vận đơn, nhân viên sẽ cập nhật tình trạng hàng hóa ngay lập tức.' },
   { id: 6, q: 'Công ty có xuất hóa đơn VAT không?', a: 'Có. Chúng tôi hỗ trợ xuất hóa đơn GTGT (VAT) điện tử cho tất cả khách hàng có nhu cầu. Vui lòng cung cấp thông tin công ty khi đặt dịch vụ.' },
-  { id: 7, q: 'Lịch xe chạy các tuyến như thế nào?', a: 'Xe khởi hành hàng ngày tại các tuyến chính: TP.HCM – Hà Nội (5 chuyến/ngày), TP.HCM – Đà Nẵng (4 chuyến/ngày), TP.HCM – Miền Tây (liên tục trong ngày).' },
+  { id: 7, q: 'Lịch xe chạy các tuyến như thế nào?', a: 'Xe khởi hành hàng ngày tại các tuyến chính: Bình Thuận – Long An (chạy liên tục), TP.HCM – Long An (chạy liên tục), TP.HCM – Bình Thuận (chạy liên tục trong ngày).' },
   { id: 8, q: 'Hàng hóa nào không được vận chuyển?', a: 'Chúng tôi không nhận vận chuyển: chất cháy nổ, hóa chất độc hại, ma túy, vũ khí, động vật hoang dã và các mặt hàng bị pháp luật cấm lưu thông.' },
   { id: 9, q: 'Có được lưu kho miễn phí không?', a: 'Có. Hàng hóa được lưu kho miễn phí trong 48 giờ kể từ khi đến kho đích. Sau thời gian này, phí lưu kho là 5.000đ/ngày/kiện hàng.' },
   { id: 10, q: 'Thủ tục gửi hàng có phức tạp không?', a: 'Rất đơn giản! Bạn chỉ cần gọi hotline hoặc nhắn Zalo, cung cấp thông tin hàng hóa và địa chỉ giao nhận. Chúng tôi sẽ sắp xếp xe đến lấy hàng tận nơi.' },

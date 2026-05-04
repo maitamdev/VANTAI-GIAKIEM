@@ -54,8 +54,8 @@ export default function FleetPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { city: 'TP. Hồ Chí Minh', addr: '123 Quốc Lộ 1A, Quận 12', size: '5,000 m²', features: 'Camera 24/7, xe nâng, bốc xếp' },
-              { city: 'Hà Nội', addr: 'KCN Gia Lâm, Long Biên', size: '3,000 m²', features: 'Kho mát, kho thường, bảo vệ 24/7' },
-              { city: 'Đà Nẵng', addr: 'KCN Hòa Khánh', size: '2,000 m²', features: 'Trung chuyển miền Trung, kho thoáng' },
+              { city: 'Long An', addr: 'KCN Đức Hòa, Huyện Đức Hòa', size: '3,000 m²', features: 'Kho nông sản, kho thường, bảo vệ 24/7' },
+              { city: 'Bình Thuận', addr: 'Quốc Lộ 1A, TP. Phan Thiết', size: '2,500 m²', features: 'Trung chuyển nông sản, kho mát, kho thoáng' },
             ].map((wh) => (
               <div key={wh.city} className="card-hover bg-white rounded-2xl p-7 border border-navy-100">
                 <div className="text-3xl mb-4">🏭</div>
